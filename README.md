@@ -49,6 +49,8 @@ It showcases my profile, skills, and interests, and serves as a practice ground 
 - Small details like `overflow: hidden` can impact visibility of nested elements.
 - Responsive design should be planned from the start, not as an afterthought.
 
+
+
 ---
 ## 🖋️ Author
 *This portfolio page and reflection were created as a learning exercise to improve my front-end web development skills.
