@@ -206,7 +206,7 @@ body {
   gap: 48px;
 }
 
-.aboutme {
+.aboutme  {
   max-width: 600px;
   text-align: left;
 }
@@ -233,21 +233,17 @@ body {
 }
 
 .tables {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* like love-grid */
+  gap: 48px;                 /* space between the two boxes */
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  flex-wrap: wrap;
 }
 
 .languages-wrapper,
 .skills-wrapper {
-  flex: 1 1 480px;
-  max-width: 480px;
-  min-width: 300px;
-  margin: 0 auto;
+  /* no flex here anymore */
   padding: 20px;
   background: #ffffff;
   border-radius: 12px;
@@ -480,15 +476,10 @@ svg {
 }
 
 /* Responsive adjustments */
-@media (max-width: 900px) {
-  .about {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
+@media (max-width: 900px) {
   .tables {
-    flex-direction: column;
+    flex-direction: column; /* stack boxes vertically */
     gap: 30px;
     padding: 20px;
   }
@@ -498,7 +489,14 @@ svg {
     max-width: 100%;
     flex: 1 1 100%;
   }
-
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .love {
+    margin: 20px auto;
+  }
   .love-grid {
     grid-template-columns: 1fr;
   }
@@ -523,14 +521,14 @@ svg {
   .profile-img-container {
     width: 140px;
   }
-
-  .aboutme h1 {
+ .aboutme h1 {
     font-size: 1.8rem;
+    padding: 0 2rem;
   }
 
   .aboutme p {
     font-size: 0.95rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
   h1 { font-size: 1.8rem; }
