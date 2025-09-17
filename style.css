@@ -1,0 +1,638 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after { box-sizing: content-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: ;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Center the logo */
+  align-items: center;
+  padding: 20px 80px;
+  font-family: 'Inter', sans-serif;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #111;
+}
+
+.nav {
+  position: absolute;
+  top: 100%;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.line {
+    height: 1px;
+    width: 80%;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.nav a:hover {
+  color: #0070f3; /* subtle accent color */
+}
+
+.header, body {
+background-image: radial-gradient(73% 147%, #F5EFE6 59%, #F5EFE6 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+ background-blend-mode: screen;
+} 
+
+
+body {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin:0;
+   font-family: 'Roboto', sans-serif;
+}
+
+/* Layout for the profile section */
+.profile {
+  display: flex;
+  flex-direction: column;     /* stack elements vertically */
+  align-items: center;        /* center everything horizontally */
+  gap: 15px;                  /* space between circle and location */
+  text-align: center;    
+  filter: grayscale(99%) contrast(100%);
+     /* center the text under icon */
+}
+
+/* location section under picture */
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;                    /* space between icon and text */
+  justify-content: center;     /* center icon+text as a group */
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-text {
+  margin: 0;
+}
+
+ .about {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   margin: 100px auto 60px;
+   flex-wrap: wrap;
+   gap: 48px;
+ }
+
+.profile, .aboutme {
+  max-width: 450px;  /* prevents boxes from getting too wide */
+}
+
+ .circle-img {
+max-width: 250px;
+max-height: 250px;
+width: 100%; ;/* scales down if container shrinks */
+height: auto;
+border-radius: 50%;        /* ensure round */
+object-fit: cover;
+  filter: grayscale(95%) contrast(130%);
+}
+
+
+/* Remove margin on small screens */
+@media (max-width: 768px) {
+  .circle-img {
+    margin: 0;
+    margin-bottom: 20px; /* spacing when stacked vertically */
+  }
+}
+
+.aboutme {
+max-width: 600px;
+}
+
+.about h1 {
+ font-size: 32px;
+ margin-bottom: 20px;
+}
+.location {
+ display: flex;
+ align-items: center;
+ gap: 5px;
+ font-size: 1rem;
+ color: #333;
+}
+
+.location .icon {
+ width: 28px;
+ height: 28px;
+ flex-shrink: 0;
+}
+
+.menu {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 4rem; /* space between left/right items */
+ list-style: none;
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column; /* stack profile and text */
+    align-items: center;
+    text-align: center;
+  }
+
+  .tables {
+    flex-direction: column;
+    gap: 30px; /* space between panels */
+    padding: 20px;
+  }
+
+  .love-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .aboutme h1 {
+    font-size: 1.8rem;
+  }
+
+  .aboutme p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .love-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+  .navbar .menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .languages-wrapper, .skills-wrapper {
+    max-width: 100%;
+  }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  p { font-size: 0.95rem; }
+  .menu {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+.icon-text {
+     display: inline-flex;       /* keep items in one line */
+     align-items:center;        /* vertically center */
+     gap: 0.5rem;                /* space between icon and text */
+   }
+
+.icon {
+   font-display: inline-block;
+}
+
+footer {
+   background-color: #E8DFCA;
+   padding: 0.5em;
+}
+   svg {
+   fill: rgb(0, 0, 0);
+   padding: 0px 5px;
+   margin: 3px, auto;
+   max-width:20px;
+}
+
+
+.skills-section {
+   margin: 0 auto;   
+ max-width: 1100px;
+ padding: 0 20px;
+
+}
+
+h2 {
+ margin-bottom: 20px;
+}
+
+.skill {
+ margin-bottom: 20px;
+}
+
+
+.skill-name {
+ font-weight: bold;
+ margin-bottom: 5px;
+}
+
+
+.progress {
+ background-color: #e0e0e0;
+ border-radius: 8px;
+ overflow: hidden;
+ height: 12px;
+}
+
+
+.progress-bar {
+ height: 100%;
+ border-radius: 8px;
+}
+
+
+/* Individual skill colors + widths */
+.html { width: 95%; background-color: #fbc6b6; }
+.css { width: 80%; background-color: #fbc6b6; }
+.js { width: 50%; background-color: #fbc6b6; }
+
+
+.skill-level {
+ font-size: 14px;
+ color: #666;
+ margin-left: 10px;
+}
+
+
+.skill-header {
+ display: flex;
+ justify-content: space-between; /* pushes left and right */
+ align-items: center;
+ margin-bottom: 1px;
+}
+
+
+.languages-header {
+ margin-bottom: 20px;
+}
+
+
+.subtitle {
+ font-size: 14px;
+ color: #666;
+ margin: 5px 0 15px;
+}
+
+
+.language-list {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+}
+
+
+.language-list li {
+ margin-bottom: 10px;
+}
+
+
+.language-row {
+ display: flex;
+ justify-content: space-between; /* name left, level right */
+ align-items: center;
+ margin-bottom: 1px;
+}
+
+
+.language-name {
+ font-weight: bold;
+}
+
+
+.language-level {
+ font-size: 14px;
+ color: #555;
+}
+
+
+.progress {
+ background-color: #f2f1f1;
+ border-radius: 6px;
+ overflow: hidden;
+ height: 12px;
+}
+
+.progress-bar {
+ height: 100%;
+}
+
+/* Individual language bars */
+.bulgarian { width: 100%; background-color: #a2b6ff; }
+.english   { width: 99%; background-color: #a2b6ff; }
+.german    { width: 99%; background-color: #a2b6ff; }
+.swedish   { width: 70%; background-color: #a2b6ff; }
+
+
+
+
+.love {
+ max-width: 600px;
+ margin: 40px auto;
+}
+
+
+.footer {
+ display: flex;
+ flex: 1;
+ justify-content: start;
+}
+
+.languages,
+.technical-skills {
+ max-width: 900px;       /* same width for both cards */
+ margin: 50 auto;      /* centers them horizontally */
+ padding: 20px;          /* space inside */
+ background: #ffffff;    /* white card background */
+ border-radius: 12px;    /* rounded corners */
+ box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+
+@media (max-width: 768px) {
+ .tables {
+   width: 95%;            /* take up more space on smaller screens */
+   padding: 15px;        /* slightly smaller padding */
+ }
+
+
+ h2, h3 {
+   font-size: 1.2rem;     /* smaller headings */
+ }
+
+
+ .language-row,
+ .skill-header {
+   flex-direction: column; /* stack name/level vertically */
+   align-items: flex-start;
+   gap: 5px;
+ }
+}
+
+
+/* Section wrappers (panel style) */
+.languages-wrapper,
+.skills-wrapper {
+  flex: 1 ;                    /* let both grow equally to use available space */
+  max-width: 480px;           /* but don't exceed this width */
+  border-radius: 16px;
+  padding: 10px;
+  background: #ffffff;
+  margin: 0 auto;      
+}
+
+
+/* Section headers */
+.languages-wrapper h2,
+.skills-wrapper h2 {
+ text-align: center;
+ margin-bottom: 25px;
+ font-size: 1.8rem;
+ color: #333;
+}
+
+.tables {
+  display: flex;               /* line up children side-by-side */
+  justify-content: center;     /* center the pair horizontally */
+  gap: 48px;                   /* consistent spacing between panels */
+  max-width: 1200px;           /* stop it getting too wide on big screens */
+  margin: 0 auto;              /* center the container in the page */
+  padding: 40px 20px;          /* breathing room */
+}
+
+.ls {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 10px 0 10px;
+  margin-bottom: 40px;
+}
+#love p {
+  color: rgb(98, 98, 98);
+}
+.love-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;       /* fill the container */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;        /* cover from top */
+  left: 0;
+  right: 0;
+  bottom: 0;     /* ✅ fills entire image container */
+  background: #ECE2DF(197, 197, 197, 0.4);
+  display: flex; /* center text */
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: bold;
+  margin: bottom 10px;px;
+}
+.item:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .love-grid {
+    grid-template-columns: 1fr; /* stack items */
+  }
+}
+
+.contact-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  background: #ECE2DF;
+  border-radius: 12px;
+  padding: 20px;
+  width: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-list img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.contact-list span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+.contact-box {
+  margin: 0 auto;
+  border-radius: 12px;/* keep rounded corners */
+}
+
+.contact-box img {
+  width: 35px;        /* smaller icon */
+  height: 35px;
+  margin-bottom: 8px; /* spacing between icon and text */
+}
+
+.contact-box span {
+  font-size: 0.9rem;  /* slightly smaller text */
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #6D94C5;
+}
+
+
